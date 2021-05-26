@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+/* 面板 */
+.panel {
+    width: 600px;
+    height: 600px;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+.btns {
+    display: flex;
+    justify-content: center;
+    margin: 0px auto 40px;
+    position: relative;
+    width: 600px;
+}
+.start{
+    display: block;
+}
+.btns input{
+    padding: 5px;
+    margin: 10px;
+}
+.gameScore{
+    position: absolute;
+    right: 0;
+    text-align: center;
+    /* margin: auto; */
+}
+.gameScore input{
+    width: 80px;
+    text-align: center;
+}
+/* 食物 */
+.food{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background-color: red;
+    border-radius: 50%;
+}
+/* .snake{
+    position: absolute;
+} */
+/* 贪吃蛇头 */
+.header{
+    z-index: 6;
+    width: 30px;
+    height: 30px;
+    /* background-color: #000 !important; */
+    /* background: url('./static/snakeAvatar.png') no-repeat !important; */
+    /* background: url('./static/bao.png') no-repeat !important; */
+    background: url('./static/me.png') no-repeat !important;
+    /* background: url('./static/header.jpg') no-repeat !important; */
+    border-radius: 50%;
+}
+/* 蛇尾 */
+.snakes{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background-color: #999;
+    /* border-radius: 50%; */
+}
+.gameOver{
+    display: none;
+    z-index: 20px;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    background-color: rgba(100, 150, 150, 0.2);
+    text-align: center;
+}
+.overText{
+    margin-top: 250px;
+    font-size: 250%;
+    /* size: 30; */
+    color: royalblue;
+    font-weight: 700;
+}
+.refreshBtn{
+    position:relative;
+    margin: 50px auto;
+    width: 100px;
+    height: 50px;
+    font-size: 120%;
+    border-radius: 10%;
+}
+/* 控制面板 */
+.control{
+    position: relative;
+    text-align: center;
+    margin-top:30px ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.control input{
+    margin: 0px 10px;
+    font-size: 200%;
+    padding: 20px;
+}
+
