@@ -16,6 +16,8 @@ var start = document.querySelector('.start');
 var pause = document.querySelector('.pause');
 // 重新开始
 var restart = document.querySelector('.restart');
+// 难易模式
+var mode = document.getElementById('group');
 //向上方向盘
 var up = document.querySelector('.up');
 //向下方向盘
@@ -39,6 +41,8 @@ var direction = 'right';
 var turn = '';
 var food_x = 0;
 var food_y = 0;
+//控制蛇移动的速度来改变难易程度
+var speed = 500;
 // 获取成绩name
 var score = document.getElementById('score');
 var timer;
@@ -191,25 +195,40 @@ function strikeWall() {
 }
 // 开始游戏
 function startGame() {
+    if (mode.value === 'easy') {
+        speed = 400;
+    }
+    else if (mode.value === 'medium') {
+        speed = 200;
+    }
+    else if (mode.value === 'hard') {
+        speed = 100;
+    }
+    else if (mode.value === 'super') {
+        speed = 50;
+    }
     Status = true;
     isDisable();
     // 移动的定时器
     timer = setInterval(function () {
         // 保留本来的移动方向
         turn = direction;
+        // changeSpeed()
         // 移动
         snakeMove();
-    }, 200);
+    }, speed);
 }
 // 判断是否开始游戏
 function isDisable() {
     if (Status) {
         // 游戏开始后隐藏按钮
         start.style.display = 'none';
+        mode.style.display = 'none';
     }
     else {
         // 游戏暂停或者结束后,显示开始按钮
         start.style.display = 'block';
+        mode.style.display = 'block';
     }
 }
 // 暂停游戏

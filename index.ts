@@ -16,7 +16,8 @@ let start = document.querySelector('.start') as HTMLDivElement
 let pause = document.querySelector('.pause') as HTMLButtonElement
 // 重新开始
 let restart = document.querySelector('.restart') as HTMLButtonElement
-
+// 难易模式
+let mode = document.getElementById('group') as HTMLSelectElement
 //向上方向盘
 let up = document.querySelector('.up') as HTMLButtonElement
 //向下方向盘
@@ -40,6 +41,8 @@ let direction = 'right'
 let turn = ''
 let food_x = 0
 let food_y = 0
+//控制蛇移动的速度来改变难易程度
+let speed = 500
 // 获取成绩name
 let score = document.getElementById('score') as HTMLInputElement
 let timer
@@ -82,7 +85,6 @@ document.onkeydown = function(evt){
         }else {
             direction = "right";
         }
-        
         break;
       case 40: 
         if(turn === 'top'){
@@ -190,24 +192,36 @@ function strikeWall() {
 }
 // 开始游戏
 function startGame() {
+    if(mode.value === 'easy') {
+        speed = 400
+    }else if(mode.value === 'medium') {
+        speed = 200
+    }else if(mode.value === 'hard') {
+        speed = 100
+    }else if(mode.value === 'super') {
+        speed = 50
+    }
     Status = true
     isDisable()
     // 移动的定时器
     timer =  setInterval(function(){
         // 保留本来的移动方向
         turn = direction
+        // changeSpeed()
         // 移动
         snakeMove()
-    },200)
+    },speed)
 }
 // 判断是否开始游戏
 function isDisable() {
     if(Status) {
         // 游戏开始后隐藏按钮
         start.style.display = 'none'
+        mode.style.display = 'none'
     }else {
         // 游戏暂停或者结束后,显示开始按钮
         start.style.display = 'block'
+        mode.style.display = 'block'
     }
 }
 // 暂停游戏

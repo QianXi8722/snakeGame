@@ -9,9 +9,18 @@
     <body>
         <!-- 按钮 -->
         <div class="btns">
+            <div class="mode">
+                <select id="group" value="hard" name="mode">
+                    <option value="easy" selected>简单</option>
+                    <option value="medium">中等</option>
+                    <option value="hard">困难</option>
+                    <option value="super">变态</option>
+                </select>
+            </div>
             <input class="start" type="button" value="开始"></input>
             <input class="pause" type="button" value="暂停"></input>
             <input class="restart" type="button" value="重新开始"></input>
+            
             <div  class="gameScore">当前成绩:<input type="text" id="score" name="score" value="0"></div>
             
         </div>

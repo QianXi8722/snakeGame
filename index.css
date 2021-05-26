@@ -20,13 +20,17 @@
 .start{
     display: block;
 }
-.btns input{
+.btns input,.mode{
     padding: 5px;
     margin: 10px;
 }
+/* 模式 */
+#group{
+    display: block;
+}
 .gameScore{
-    position: absolute;
-    right: 0;
+    position: relative;
+    /* right: 0; */
     text-align: center;
     /* margin: auto; */
 }
@@ -51,9 +55,9 @@
     width: 30px;
     height: 30px;
     /* background-color: #000 !important; */
-    /* background: url('./static/snakeAvatar.png') no-repeat !important; */
+    background: url('./static/snakeAvatar.png') no-repeat !important;
     /* background: url('./static/bao.png') no-repeat !important; */
-    background: url('./static/me.png') no-repeat !important;
+    /* background: url('./static/me.png') no-repeat !important; */
     /* background: url('./static/header.jpg') no-repeat !important; */
     border-radius: 50%;
 }
